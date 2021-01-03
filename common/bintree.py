@@ -8,16 +8,49 @@ class Node(object):
         self.left = left
         self.right = right
         self.next = next
+    def __str__(self):
+        return f'{self.val}'
 """ 
 重构
 """
-def rebuild(i):
-    if i < len(nodes):
-        return Node(val=nodes[i], left=rebuild((i<<1)+1),right=rebuild((i<<1)+2))
+
+def lev_rebuild(nodes):
+    N = len(nodes)
+    if N <= 0: return None
+    root = Node(val = nodes[0])
+    q = [root]
+    i = 1
+    while True:
+        if i >= N: break
+        t = []
+        for cur in q:
+            if nodes[i]!='null':
+                cur.left = Node(val=nodes[i])
+                t.append(cur.left)
+            i += 1
+            if i == N: break
+            if nodes[i]!='null':
+                cur.right = Node(val=nodes[i])
+                t.append(cur.right)
+            i += 1
+        q = t
+    return root
+
 
 """ 
 遍历
 """
+def trav(root, mode = 'lev', disp = True):
+    result = []
+    if mode == 'lev':
+        f = lev_trav
+    elif mode == 'pre':
+        f = pre_trav
+    f(root, result)
+    if disp:
+        print(result)
+    return result
+
 def pre_trav(root, result):
     if root:
         result.append(root.val)
@@ -26,7 +59,7 @@ def pre_trav(root, result):
     result.append(None)
     
 # 层次遍历
-def level_trav(root, result):
+def lev_trav(root, result):
     q = [root]
     while q:
         qt = []
@@ -40,7 +73,7 @@ def level_trav(root, result):
         q = qt
         
 if __name__ == "__main__":
-    nodes = [1,2,3,4,5,6,7]
-    root = rebuild(0)
+    root = [1,2,3,4,'null',2,4,'null','null',4]
+    root = lev_rebuild(root)
     result = []
     level_trav(root, result)
