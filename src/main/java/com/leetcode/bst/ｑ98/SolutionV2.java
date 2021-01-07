@@ -9,8 +9,7 @@ BST的约束——左子树都小于cur，右子树都大于cur。这个约束�
 他对右子树的要求是，必须限制在一个范围内 cur.val < all in right < max, 这个max并不是什么时候都存在，只有在当前节点是父节点的左子树时，它的max来自父节点的cur.val
 https://leetcode.com/problems/validate-binary-search-tree/discuss/32109/My-simple-Java-solution-in-3-lines
 */
-public class SolutionV2 {
-    public boolean isValidBST(TreeNode root) {
+public class SolutionV2 {    public boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
