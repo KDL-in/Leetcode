@@ -1,0 +1,78 @@
+package com.leetcode.binarytree.q222;
+
+import com.leetcode.common.bintree.BinTreeTools;
+import com.leetcode.common.bintree.TreeNode;
+/*
+* 222. Count Complete Tree Nodes
+* 计算完全二叉树的树节点数量
+* https://leetcode.com/problems/count-complete-tree-nodes/
+*
+* */
+
+/*计算完全二叉树的树节点数量。
+思路：
+要求在低于O(N)的时间复杂度内解决问题
+由于任务是累加，每个递归中都是O(1)，所以很自然地，树的节点统计必然也是至少和节点数量一样O(N) —— 至少要遍历一遍吧
+但是完全二叉树，满二叉树，complete二叉树由于其特殊的性质，使得你可以不必遍历的情况下，从树高得知到部分或全部的节点数量，这就是优化的key point
+计算二叉树的节点数量很简单
+树节点数量 = 左子树数量 + 右子树数量 + 1，看起来似乎要遍历左右子树，但由于完全二叉树的特点，其实左右必然有一棵树是满二叉树，不需要进行遍历。
+具体而言：
+- 如果左子树为满树，可以直接计算则直接递归计算右子树即可
+- 如果左子树非满树，则右子树必为满树
+- 满树的判断，直接遍历root的最右边节点，查看树高是否符合要求。初始树高则是查看root的最左节点深度。
+时间复杂度：
+递归深度等于树高H，每次需要左子树是否为满二叉树，O(H)，所以实际时间复杂度为O(H*H) = O(log N * log N)
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Count Complete Tree Nodes.
+Memory Usage: 47 MB, less than 5.66% of Java online submissions for Count Complete Tree Nodes.
+*/
+
+
+public class Solution {
+    public int countNodes(TreeNode root) {
+        int h = getTreeHeight(root);
+        return countFullTree(root, h);
+    }
+    public int countFullTree(TreeNode root, int h) {
+        if (root == null) return 0;
+        int lc,rc;
+        // 如果左子树为满树，可以直接计算则直接递归计算右子树即可
+        if (isFull(root.left, h - 1)) {
+            lc = countPerfectTree(h - 1);
+            rc = countFullTree(root.right, h - 1);
+        } else {// 如果左子树非满树，则右子树比为满树
+            rc = countPerfectTree(h - 2);
+            lc = countFullTree(root.left, h - 1);
+        }
+        return lc +  rc + 1;
+    }
+
+    private int getTreeHeight(TreeNode root) {
+        int h = 0;
+        while (root!=null){
+            h++;
+            root = root.left;
+        }
+        return h - 1;
+    }
+
+
+    private int countPerfectTree(int h) {
+        return (int) (Math.pow(2,h+1)-1);
+    }
+
+    private boolean isFull(TreeNode root, int h) {
+        h += 1;
+        while (root != null) {
+            root = root.right;
+            h--;
+        }
+        return h == 0;
+    }
+
+    public static void main(String[] args) {
+        String input = "1,2,3,4,5,6";
+        TreeNode root = BinTreeTools.levRebuild(input);
+        int count = new Solution().countNodes(root);
+        System.out.println(count);
+    }
+}

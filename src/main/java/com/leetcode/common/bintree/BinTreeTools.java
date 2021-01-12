@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import static com.leetcode.common.InputTools.inputSplit;
+
 public class BinTreeTools {
 
     public static List<TreeNode> trav(TreeNode root, String mode) {
@@ -34,16 +36,7 @@ public class BinTreeTools {
     }
     public static TreeNode levRebuild(String input) {
         // 解析输入
-        String[] sp = input.split(",");
-        List<Integer> data = new ArrayList<>();
-        for (String s : sp) {
-            s = s.trim();
-            if ("null".equals(s)) {
-                data.add(null);
-            } else {
-                data.add(Integer.parseInt(s));
-            }
-        }
+        List<Integer> data = inputSplit(input, ",");
         int i = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         TreeNode root = new TreeNode(data.get(i++));
@@ -71,6 +64,7 @@ public class BinTreeTools {
 
         return root;
     }
+
 
 
 }
