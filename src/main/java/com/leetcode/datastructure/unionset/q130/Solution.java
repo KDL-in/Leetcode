@@ -11,6 +11,8 @@ Runtime: 9 ms, faster than 8.29% of Java online submissions for Surrounded Regio
 Memory Usage: 40.9 MB, less than 75.42% of Java online submissions for Surrounded Regions.
 */
 
+import java.util.LinkedList;
+
 class Solution {
     int[] par;
 
