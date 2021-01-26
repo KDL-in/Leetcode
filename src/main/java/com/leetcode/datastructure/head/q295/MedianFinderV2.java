@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.q295;
+package com.leetcode.datastructure.head.q295;
 
 import java.util.PriorityQueue;
 /*

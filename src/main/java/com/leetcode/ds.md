@@ -35,6 +35,12 @@
 
 最经典的案例是：一排人站成一列找身高更高的——此时身高低的会被直接挡住，只会看到更高的。
 
+实现的基本思想是，比入栈元素小的栈顶元素都会被出栈。这使得栈保持严格的单调性（单调递减）。
+
+从另一个角度，若不然，则会出现5 1 2 4，事实上被4挡住的1 2 对于后面随后的计算是没有用处的，在找到更高的人的场景下，你只能看到4.
+
+算法复杂度的思考很经典，考虑所有元素有且仅有出栈入栈一次。 
+
 ````java
 int[] ans = new int[T.length];
 Stack<Integer> stack = new Stack();
@@ -48,6 +54,53 @@ for (int i = T.length - 1; i >= 0; --i) {
 - 496，下一个更大的数，两数组，单调栈
 - 503，循环数组，下一个更大的数，两次遍历
 - 739，下一个更温暖的日子需要多久，变体
+
+**单调队列**
+
+它们保证单调的基本手段是——元素进入前，首先移除队列末尾不符合单调条元素。
+
+详细可以参考题目 239的注解。
+
+单调队列的模板。
+
+````java
+class ManoQueue{
+    private LinkedList<Integer> list;
+
+    public ManoQueue() {
+        list = new LinkedList<>();
+    }
+
+    public void push(int cur) {
+        while (!list.isEmpty() && cur > list.getLast()) list.removeLast();
+        list.addLast(cur);
+    }
+
+    public int max() {
+        return list.getFirst();
+    }
+
+    public void pop(int cur) {
+        if (list.getFirst() == cur)  list.removeFirst();
+    }
+}
+````
+
+滑动窗口的模板。
+
+````java
+        for (int i = 0; i < nums.length; i++) {
+            if (i < k - 1) {
+                q.push(nums[i]);
+            } else {
+                q.push(nums[i]);
+                res[idx++] = q.max();
+                q.pop(nums[i - k + 1]);
+            }
+        }
+````
+
+- 239，返回滑动窗口的最大值，在O(1)的时间完成该操作，单调队列解决。
 
 **其他**
 
