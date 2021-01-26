@@ -31,6 +31,24 @@
 - 146，**实现LRU Cache**，常见的的一种队列策略的实现，主要就是`linkedHashMap`的应用
 - 460，**实现LFU Cache**，按频率，比较难想到很全面的实现，比如这个 题，应该使用`freq -> linkedHashMap`才能很好保证LFU的各项效率。
 
+**单调栈**
+
+最经典的案例是：一排人站成一列找身高更高的——此时身高低的会被直接挡住，只会看到更高的。
+
+````java
+int[] ans = new int[T.length];
+Stack<Integer> stack = new Stack();
+for (int i = T.length - 1; i >= 0; --i) {
+    while (!stack.isEmpty() && T[i] >= T[stack.peek()]) stack.pop();
+    ans[i] = stack.isEmpty() ? 0 : stack.peek() - i;
+    stack.push(i);
+}
+````
+
+- 496，下一个更大的数，两数组，单调栈
+- 503，循环数组，下一个更大的数，两次遍历
+- 739，下一个更温暖的日子需要多久，变体
+
 **其他**
 
 - 295，流的中位数，大小堆
