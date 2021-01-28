@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.q460;
+package com.leetcode.datastructure.linkedhashmap.q460;
 
 import java.util.HashMap;
 import java.util.Map;

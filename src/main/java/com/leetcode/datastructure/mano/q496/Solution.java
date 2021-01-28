@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.stack.q496;
+package com.leetcode.datastructure.mano.q496;
 
 import java.util.HashMap;
 import java.util.Map;

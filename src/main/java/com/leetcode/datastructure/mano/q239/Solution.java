@@ -1,7 +1,6 @@
-package com.leetcode.datastructure.q239;
+package com.leetcode.datastructure.mano.q239;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /*
 * 239. Sliding Window Maximum

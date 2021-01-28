@@ -1,6 +1,7 @@
 package com.leetcode.datastructure.head.q295;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 /*
 大顶堆，小顶堆。
 时间复杂度，维护有序性（准确来说，部分有序即可）没问题；插入数据，查找+插入，O（logN），寻找中值，O（1）

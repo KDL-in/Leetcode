@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.q355;
+package com.leetcode.datastructure.head.q355;
 
 import java.util.*;
 

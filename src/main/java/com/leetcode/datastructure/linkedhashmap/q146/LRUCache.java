@@ -1,4 +1,6 @@
-package com.leetcode.datastructure.q146;/*
+package com.leetcode.datastructure.linkedhashmap.q146;/*
+
+
  * 146. LRU Cache
  * LRU缓存队列实现
  * https://leetcode.com/problems/lru-cache/

@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.stack.q739;
+package com.leetcode.datastructure.mano.q739;
 
 import java.util.Stack;
 
