@@ -1,4 +1,4 @@
-package com.leetcode.datastructure.array.other.q238;
+package com.leetcode.datastructure.array.inplace.q238;
 /*
 * 238. Product of Array Except Self
 * 数组累乘，除了当前数，不得使用额外空间，不得用除法
