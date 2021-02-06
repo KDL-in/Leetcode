@@ -1,4 +1,4 @@
-package com.leetcode.dp.lis.q300;
+package com.leetcode.dp.subseq.lis.q300;
 
 
 /*

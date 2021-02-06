@@ -1,4 +1,4 @@
-package com.leetcode.dp.subseq.q72;
+package com.leetcode.dp.subseq.match.q72;
 
 
 /*

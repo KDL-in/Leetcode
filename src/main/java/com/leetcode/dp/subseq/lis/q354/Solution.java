@@ -1,4 +1,4 @@
-package com.leetcode.dp.lis.q354;
+package com.leetcode.dp.subseq.lis.q354;
 
 import java.util.Arrays;
 
