@@ -1,3 +1,119 @@
+### 背包问题
+
+背包问题是给定物品，背包容量，要求取出符合容量最大价值的物品，每个物品的价值为v[i]，重量为w[i]，容量为W。01背包要求物品只能使用一次，完全背包要求物品能使用无限次。
+
+背包问题容易可以想到子集数的解，其状态是当前物品索引i以及剩余容量，考虑当前物品i选不选用的问题。
+
+0-1背包的算法复杂度等于子集数的数量，也就是$O(2^N)$。而完全背包，由于每个状态可以作$K=W/w[i]$中选择，所以暴力求解的复杂度为$O(K^N)$。
+
+完全背包的暴力求解方法不是很好实现，但是以递推式的角度来看，二者几乎一致
+
+0-1背包
+
+`dp(i,w)=max(dp(i-1, w), dp(i-1, v-c[i-1])+ v[i])`
+
+完全背包
+
+`dp(i,w)=max(dp(i-1, w), dp(i, v-c[i-1])+ v[i])`
+
+这非常巧妙，即对于完全背包，即使选用了当前i物品，i也不需要减一，因为它可以多次选用。
+
+从动态规划memo角度来看，二者的时间复杂度必然为子问题的个数$O(NW)$。
+
+#####　416 子集目标和
+
+> 　* 416. Partition Equal Subset Sum
+> * 子集目标和
+> * https://leetcode.com/problems/partition-equal-subset-sum/
+
+01背包问题，动态规划，压缩
+需要简单转化一下，优化目标单一化，sum(A) = sum(set) / 2
+
+- dp(i, sum)定义为set[:i]子集之和为sum的可能，true or false
+    dp[i,sum] = dp[i-1, sum - nums[i - 1]] || dp[i-1, sum];
+    
+- 选择，当前i元素是否考虑，
+
+- 状态，i和sum，影响可能性dp
+
+- base，i==0时，集合没有元素，return 0，sum==0时，只有一种选择满足，那就是什么都不选， return 1
+
+  复杂度 O(N SUM) O(SUM)
+
+````java
+/*
+子集背包问题，动态规划，压缩
+需要简单转化一下，优化目标单一化，sum(A) = sum(set) / 2
+- dp(i, sum)定义为set[:i]子集之和为sum的可能，true or false
+    dp[i,sum] = dp[i-1, sum - nums[i - 1]] || dp[i-1, sum];
+- 选择，当前i元素是否考虑，
+- 状态，i和sum，影响可能性dp
+- base，i==0时，集合没有元素，return 0，sum==0时，只有一种选择满足，那就是什么都不选， return 1
+复杂度 O(N SUM) O(SUM)
+Runtime: 22 ms, faster than 70.32% of Java online submissions for Partition Equal Subset Sum.
+        Memory Usage: 38.6 MB, less than 81.21% of Java online submissions for Partition Equal Subset Sum.
+*/
+
+class Solution {
+    public boolean canPartition(int[] nums) {
+        int s = 0, n = nums.length;
+        for (int num : nums) s += num;
+        if ((s & 1) ==1) return false;
+        s >>= 1;
+        boolean[] memo = new boolean[s + 1];
+        memo[0] = true;
+        for (int i = 1; i < n; i++) {
+            for (int sum = s; sum >= nums[i-1]; sum--) {
+                memo[sum] = memo[sum - nums[i - 1]] || memo[sum];
+            }
+        }
+        return memo[s];
+    }
+}
+````
+
+##### 518 凑零钱的可能性
+
+> * 518. Coin Change 2
+> * 找零可能性，硬币无限
+> * https://leetcode.com/problems/coin-change-2/
+
+完全背包问题
+- dp(i, sum)，定义为set[:i]个物品下，得到sum的可能性
+    dp[i, sum] = dp[i-1, sum] + dp[i, sum - coins[i-1]];
+- 状态为i，sum
+- 选择，当前i物品是否选用
+- base，当sum = 0时，只能全不选，return 1， 当i = 0时，无物品，return 1
+
+````java
+/*
+完全背包问题
+- dp(i, sum)，定义为set[:i]个物品下，得到sum的可能性
+    dp[i, sum] = dp[i-1, sum] + dp[i, sum - coins[i-1]];
+- 状态为i，sum
+- 选择，当前i物品是否选用
+- base，当sum = 0时，只能全不选，return 1， 当i = 0时，无物品，return 1
+Runtime: 2 ms, faster than 100.00% of Java online submissions for Coin Change 2.
+        Memory Usage: 36.1 MB, less than 95.99% of Java online submissions for Coin Change 2.
+
+*/
+
+class Solution {
+    public int change(int amount, int[] coins) {
+        int[] memo = new int[amount + 1];
+        memo[0] = 1;
+        for (int i = 1; i <= coins.length; i++) {
+            for (int sum = coins[i-1]; sum <= amount; sum++) {
+                memo[sum] = memo[sum] + memo[sum - coins[i-1]];
+            }
+        }
+        return memo[amount];
+    }
+}
+````
+
+
+
 ##### 494 得到目标和的方式
 
 >  * 494. Target Sum
@@ -17,6 +133,8 @@ Explanation:
 
 There are 5 ways to assign symbols to make the sum of nums be target 3.
 ```
+
+转化之后，是一道典型的01背包问题。
 
 **dp分析**
 
