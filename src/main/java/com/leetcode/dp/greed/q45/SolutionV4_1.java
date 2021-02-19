@@ -6,7 +6,7 @@ Runtime: 399 ms, faster than 11.88% of Java online submissions for Jump Game II.
         Memory Usage: 41.5 MB, less than 26.16% of Java online submissions for Jump Game II.
 */
 
-public class SolutionV1_2 {
+public class SolutionV4_1 {
     public int jump(int[] nums) {
         int N = nums.length, step = 0,x;
         int maxJump[] = new int[N];

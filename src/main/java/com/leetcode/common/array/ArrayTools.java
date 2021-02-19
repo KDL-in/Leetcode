@@ -17,6 +17,15 @@ public class ArrayTools {
         }
         System.out.println();
     }
+
+    public static void disp2DArray(boolean[][] arr) {
+        for (boolean[] ints : arr) {
+            for (boolean x : ints) {
+                System.out.print(x + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 
 
