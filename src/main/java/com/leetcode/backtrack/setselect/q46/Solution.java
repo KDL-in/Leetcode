@@ -1,4 +1,4 @@
-package com.leetcode.backtrack.g1_setselect.q46;
+package com.leetcode.backtrack.setselect.q46;
 
 import java.util.ArrayList;
 import java.util.HashMap;

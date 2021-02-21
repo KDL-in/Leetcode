@@ -1,4 +1,4 @@
-package com.leetcode.backtrack.g1_setselect.q47;
+package com.leetcode.backtrack.setselect.q47;
 
 import java.util.*;
 /*

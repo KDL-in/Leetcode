@@ -1,4 +1,4 @@
-package com.leetcode.backtrack.g1_setselect.q78;
+package com.leetcode.backtrack.setselect.q78;
 
 import java.util.ArrayList;
 import java.util.List;

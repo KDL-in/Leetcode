@@ -1,16 +1,22 @@
-package com.leetcode.backtrack.g1_setselect.q78;
-
-import com.leetcode.backtrack.g1_setselect.q39.Solution;
+package com.leetcode.backtrack.setselect.q90;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 /*
-* Runtime: 0 ms, faster than 100.00% of Java online submissions for Subsets.
-* Memory Usage: 39.7 MB, less than 16.56% of Java online submissions for Subsets.
+* 90. Subsets II
+* 子集数，集合有重复元素，求出子集不得重复
+* https://leetcode.com/problems/subsets-ii/
 * */
-public class SolutionV2 {
-    public List<List<Integer>> subsets(int[] nums) {
+/*
+Runtime: 1 ms, faster than 99.52% of Java online submissions for Subsets II.
+        Memory Usage: 39.5 MB, less than 33.78% of Java online submissions for Subsets II.
+*/
+
+class Solution {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums);
         backtrack(nums, 0, new ArrayList<>(), res);
         return res;
     }
@@ -20,15 +26,10 @@ public class SolutionV2 {
         res.add(new ArrayList<>(cur));
 
         for (int i = k; i < nums.length; i++) {
+            if (k < i && nums[i] == nums[i-1]) continue;
             cur.add(nums[i]);
             backtrack(nums, i + 1, cur, res);
             cur.remove(cur.size() - 1);
         }
-
-    }
-
-    public static void main(String[] args) {
-        int[] candidates = {3, 2, 5};
-        System.out.println(new SolutionV2().subsets(candidates));
     }
 }
