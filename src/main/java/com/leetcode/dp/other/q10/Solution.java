@@ -1,4 +1,4 @@
-package com.leetcode.dp.q10;
+package com.leetcode.dp.other.q10;
 
 import com.leetcode.common.array.ArrayTools;
 

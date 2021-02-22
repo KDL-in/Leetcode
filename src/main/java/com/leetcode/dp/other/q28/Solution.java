@@ -1,4 +1,4 @@
-package com.leetcode.dp.q28;
+package com.leetcode.dp.other.q28;
 
 /*
 * 28. Implement strStr()

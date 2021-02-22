@@ -1,4 +1,4 @@
-package com.leetcode.dp.q10.error;
+package com.leetcode.dp.other.q10.error;
 
 class Solution {
     private boolean [][] memo, flag;

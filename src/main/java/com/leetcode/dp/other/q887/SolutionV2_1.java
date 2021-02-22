@@ -1,4 +1,4 @@
-package com.leetcode.dp.q887;
+package com.leetcode.dp.other.q887;
 
 
 /*

@@ -1,4 +1,4 @@
-package com.leetcode.dp.q887;
+package com.leetcode.dp.other.q887;
 /*
 * 887. Super Egg Drop
 * 高楼丢鸡蛋

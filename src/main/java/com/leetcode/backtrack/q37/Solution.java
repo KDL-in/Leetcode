@@ -27,7 +27,7 @@ class Solution {
             if (!check(i, j, c, board)) continue;
             board[i][j] = c;
             // 找到直接返回
-            if (backtrack(board, i, j)) {
+            if (backtrack(board, i, j+1)) {
                 return true;
             }
             board[i][j] = '.';
