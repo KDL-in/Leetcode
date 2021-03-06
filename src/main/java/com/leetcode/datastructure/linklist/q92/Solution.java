@@ -1,4 +1,4 @@
-package com.leetcode.linklist.q92;
+package com.leetcode.datastructure.linklist.q92;
 
 import com.leetcode.common.linklist.LinkListTools;
 import com.leetcode.common.linklist.ListNode;

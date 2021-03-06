@@ -13,9 +13,6 @@
 ```
 
 ```java
-
-
-
 /*
 抑或技巧，不同等于相加，相同等于相减
 Runtime: 1 ms, faster than 96.29% of Java online submissions for Single Number.
@@ -808,5 +805,204 @@ class Solution {
     public int bulbSwitch(int n) {
         return (int) Math.sqrt(n);
     }
+}
+```
+
+### Seq
+
+序列相关的问题。其特点都是直觉上算法复杂度的下界无法优化（等于子问题个数），实际上通过特定的数学知识能够进一步优化。例如前缀和优化区级频繁求和，差分优化区间频繁变化。
+
+#### 560. Subarray Sum Equals K
+
+```
+/*
+* 560. Subarray Sum Equals K
+* 序列和
+* https://leetcode.com/problems/subarray-sum-equals-k/
+*
+* */
+```
+
+```java
+/*
+暴力
+序列前缀和， 适用于需要频繁求取连续区间和
+O(n^2)，考虑到sum[i,j]为[i,j)的和，这种组合有n^2/2个，所以应该至少都遍历一次。好像时间复杂度上是无法节省的。
+Runtime: 1262 ms, faster than 14.59% of Java online submissions for Subarray Sum Equals K.
+        Memory Usage: 41.1 MB, less than 94.29% of Java online submissions for Subarray Sum Equals K.
+*/
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int count, sum, n;
+        count = sum = 0; n = nums.length;
+        for (int i = 0; i < n; i++) {
+            sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += nums[j];
+                if (sum == k) ++count;
+            }
+        }
+        return count;
+    }
+}
+```
+
+$$
+sum[i,j] = sum[0, j] - sum[0,i] = k
+$$
+其中sum[i,j]指[i, j)
+那么，每次访问k，只要把当前sum[0,k]当成sum[0,j]，查看map中是否记录有sum[0,i]使得上述公式成立即可。
+
+因为有出现重复累加和，所以还需要用map来记录次数。另外，一开始就需要加入0，表示i=0时的值。
+
+```java
+/*
+
+Runtime: 18 ms, faster than 73.01% of Java online submissions for Subarray Sum Equals K.
+Memory Usage: 42.1 MB, less than 38.48% of Java online submissions for Subarray Sum Equals K.
+* */
+
+class SolutionV1 {
+    public int subarraySum(int[] nums, int k) {
+        int sum = 0, count = 0;
+        Map <Integer, Integer>map = new HashMap();
+        for (int num : nums) {
+            sum += num;
+            count += map.getOrDefault(sum - k, 0);
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
+        }
+        return count;
+    }
+}
+```
+
+#### 1109. Corporate Flight Bookings
+
+```
+/*
+ * 1109. Corporate Flight Bookings
+ * 订航班，差分
+ * https://leetcode.com/problems/corporate-flight-bookings/
+ *
+ * */
+```
+
+序列差分，适用于连续改变区间
+
+该题可以轻易想到O(N^2)的解，因为直观上bookings需要遍历，区间需要遍历，至少遍历一次。
+
+但其实有一个非常巧妙的的方法，利用了区间连续的特点。按区间变动，在差分数组中，只有区间两侧才会发生变化。
+https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qi-ta-suan-fa-ji-qiao/cha-fen-ji-qiao
+
+```java
+/*
+
+Runtime: 3 ms, faster than 72.03% of Java online submissions for Corporate Flight Bookings.
+Memory Usage: 54.3 MB, less than 73.37% of Java online submissions for Corporate Flight Bookings.
+* */
+class Solution {
+    public int[] corpFlightBookings(int[][] bookings, int n) {
+        int[] diff = new int[n];
+
+        for (int[] booking : bookings) {
+            diff[booking[0] - 1] += booking[2];
+            if (booking[1] < n) diff[booking[1]] -= booking[2];
+        }
+        for (int i = 1; i < n; i++) {
+            diff[i] = diff[i] + diff[i - 1];
+        }
+        return diff;
+    }
+}
+```
+
+### Topk
+
+求最大的值相关。
+
+模板，数组划分，这个算法无法保证稳定性。
+
+````java
+    private int partition(int bi, int bj, int[] nums) {
+        int key = nums[bj], i = bi - 1, j = bj;
+        while (i < j) {
+            while (nums[++i] < key) ;
+            while (j - 1 >= bi && nums[--j] >= key) ;
+            swap(i, j, nums);
+        }
+        swap(i, j, nums);
+        swap(bj, i, nums);
+        return i;
+    }
+````
+
+
+
+#### 215. Kth Largest Element in an Array
+
+```
+/*
+* 215. Kth Largest Element in an Array
+* 寻找第k大的数
+* https://leetcode.com/problems/kth-largest-element-in-an-array/
+*
+* */
+```
+
+经典partition算法的使用
+
+时间复杂度，该算法的时间复杂度和划分的平衡性有关，最差情况为逆序序列，则整体为O(N^2)
+
+最好情况下，子问题的规模每次都减半，最佳时间复杂度为O(N)，证明过程为等比求和。
+
+可以使用随机选择的方式选择key，使得在严格的期望上我们可以期待O(N)的时间复杂度
+
+```java
+/*
+
+
+Runtime: 1 ms, faster than 98.06% of Java online submissions for Kth Largest Element in an Array.
+Memory Usage: 39.3 MB, less than 67.37% of Java online submissions for Kth Largest Element in an Array.
+* */
+
+import java.util.Random;
+
+class SolutionV2 {
+    public int findKthLargest(int[] nums, int k) {
+        int i = 0, t = 0, j = nums.length - 1;
+        Random random = new Random();
+        k = nums.length - k;
+        while ((t = partition(i, j, nums)) != k) {
+            // ArrayTools.disp1DArray(nums);
+            if (t > k) j = t - 1;
+            else i = t + 1;
+            t = random.nextInt(j - i + 1) + i;
+            swap(t, j, nums);
+        }
+        return nums[k];
+    }
+
+    private int partition(int bi, int bj, int[] nums) {
+        int key = nums[bj], i = bi - 1, j = bj;
+        while (i < j) {
+            while (nums[++i] < key) ;
+            while (j - 1 >= bi && nums[--j] >= key) ;
+            swap(i, j, nums);
+        }
+        swap(i, j, nums);
+        swap(bj, i, nums);
+        return i;
+    }
+
+    private void swap(int i, int j, int[] nums) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
+    }
+
+    // public static void main(String[] args) {
+    //     System.out.println(new Solution().findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
+    // }
 }
 ```
