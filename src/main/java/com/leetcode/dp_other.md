@@ -16,7 +16,7 @@
 
 - dp(k,n)定义为k个鸡蛋，n层楼，最多需要扔的次数
   $$
-  \mathrm{dp}(K, N)=\min _{1 \leq X \leq N}(\max (\mathrm{dp}(K-1, X-1), \mathrm{dp}(K, N-X)))
+  \mathrm{dp}(K, N)=\min _{1 \leq X \leq N}(\max (\mathrm{dp}(K-1, X-1), \mathrm{dp}(K, N-X)))+1
   $$
   为了确定k个鸡蛋下，n层楼需要多少次，有1-n种选择，从1-n楼抛下鸡蛋，如果碎了，则等于$\mathrm{dp}(K-1, X-1)$，鸡蛋减一，层数减一，测试该层以下的层次。如果没碎，则等于$\mathrm{dp}(K, N-X)$，鸡蛋数目不变，测试该层以上的层。由于需要考虑最坏情况，必须保证在某一层抛，取碎或不碎中的大者。这里容易混淆，在保证最坏情况的情形下，选择次数最少的一层，所以最外层是min
 
@@ -551,5 +551,144 @@ class Solution {
         }
         return (int)((a + b) % mod);
     }
+}
+```
+
+### 阿里面试题
+
+#### 1539. Kth Missing Positive Number
+
+```
+/*
+* 1539. Kth Missing Positive Number
+* 寻找确实的正数
+* https://leetcode.com/problems/kth-missing-positive-number/
+*
+*
+* */
+```
+
+```java
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int j = 1, n = arr.length, i = 0;
+        for (;k>0;){
+            if(i < n && arr[i] == j) ++i;
+            else --k;
+            ++j;
+        }
+        return j-1;
+    }
+}
+```
+
+#### 815. Bus Routes
+
+最短路径问题，关键是建图的过程，把车当成边。
+
+```java
+/*
+ * 815. Bus Routes
+ * 图， bfs
+ * https://leetcode.com/problems/bus-routes/
+ *
+ *
+ * */
+
+/*
+BFS
+多个循环被折叠起来，算法复杂度不是很好算。
+每个bus都只会访问一次，每个bus能到达的城市至少访问一次，所以整体上应该是O(MN)
+Runtime: 76 ms, faster than 31.09% of Java online submissions for Bus Routes.
+Memory Usage: 93.1 MB, less than 11.33% of Java online submissions for Bus Routes.
+* */
+class SolutionV2 {
+
+
+    public int numBusesToDestination(int[][] routes, int source, int target) {
+        int step = 0;
+        Map<Integer, Set<Integer>> map = new HashMap<>();
+        Set<Integer> vis = new HashSet<>();
+        Queue<Integer> q = new LinkedList<>();
+        for(int i = 0; i < routes.length; ++i){
+            for(int j = 0; j < routes[i].length; ++j){
+                Set<Integer> cur = map.getOrDefault(routes[i][j], null);
+                if(cur == null){
+                    cur = new HashSet<>();
+                    map.put(routes[i][j], cur);
+                }
+                cur.add(i);
+            }
+        }
+        q.add(source);
+        while(!q.isEmpty()){
+            int size = q.size();
+            while( size-- > 0 ){
+                int city = q.poll();
+                if(city == target) return step;
+                Set<Integer> buses = map.getOrDefault(city, null);
+                if(buses==null) continue;
+                for (int bus : buses){
+                    if(vis.contains(bus)) continue;
+                    for(int arrCity : routes[bus]){
+                        q.add(arrCity);
+                    }
+                    vis.add(bus);
+                }
+
+            }
+            ++step;
+        }
+
+        return -1;
+    }
+}
+```
+
+#### 879. Profitable Schemes
+
+```java
+/*
+* 879. Profitable Schemes
+* 选择盈利模式
+* https://leetcode.com/problems/profitable-schemes/
+*
+* */
+/*
+这个动态规划有点难，01背包问题
+
+不是很懂为何最后要累加
+* */
+class SolutionV2 {
+    private int MOD = (int)(1e9 + 7);
+    private int memo[][][];
+
+    public int profitableSchemes(int n, int minProfit, int[] group, int[] profit) {
+        int gn = group.length, p, g;
+        memo = new int[gn+1][n+1][minProfit+1];
+        memo[0][0][0] = 1;
+        for(int k = 1; k <= gn; ++k){
+            for(int i = 0; i <= n; ++i){
+                g = group[k-1];
+                p = profit[k-1];
+                for(int j = 0; j <= minProfit; ++j){
+                    memo[k][i][j] = memo[k-1][i][j];
+                    if(g <= i){
+                        memo[k][i][j] = (memo[k-1][i][j] + memo[k-1][i-g][Math.max(0, j - p)])%MOD ;
+                    }
+                }
+            }
+        }
+                
+       int sum = 0;                                                       
+        for(int i = 0; i <= n; i++){
+            sum = (sum + memo[gn][i][minProfit])%MOD;
+        }
+        return sum;
+    }
+    
+
+
+
 }
 ```

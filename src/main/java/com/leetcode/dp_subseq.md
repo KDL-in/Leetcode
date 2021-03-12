@@ -325,7 +325,7 @@ lis棋牌游戏二分解法
 此题的关键是，当你将w按升序排序，h按降序排序，问题就直接可以转换成字符串最长字序列
 ——不改变元素相对位置，直接找h升序序列。
 Runtime: 8 ms, faster than 98.25% of Java online submissions for Russian Doll Envelopes.
-        Memory Usage: 40.2 MB, less than 38.40% of Java online submissions for Russian Doll Envelopes.
+Memory Usage: 40.2 MB, less than 38.40% of Java online submissions for Russian Doll Envelopes.
 */
 
 public class SolutionV2 {
@@ -356,9 +356,9 @@ public class SolutionV2 {
 
 ##### 1143 最长公共子序列
 
-> * 1143. Longest Common Subsequence
-> * 最长公共子序列
-> * https://leetcode.com/problems/longest-common-subsequence/
+> 1143. Longest Common Subsequence
+> 最长公共子序列
+> https://leetcode.com/problems/longest-common-subsequence/
 
 经典问题，两字符串匹配。
 
@@ -368,7 +368,7 @@ public class SolutionV2 {
 
 - dp函数，dp(i, j)定义为s1[:i]，s2[:j]的LCS长度
 
-  ​	`dp[i][j] = s1[i-1] == s2[j-1] ? dp[i - 1][j - 1] + 1 : max(dp[i - 1][j], dp[i][j - 1]);`
+  `dp[i][j] = s1[i-1] == s2[j-1] ? dp[i - 1][j - 1] + 1 : max(dp[i - 1][j], dp[i][j - 1]);`
 
 - 状态，i，j -> 当前的LSC
 
@@ -383,7 +383,7 @@ public class SolutionV2 {
 备忘录动态规划
 时间空间都是o(N^2)
 Runtime: 40 ms, faster than 7.66% of Java online submissions for Longest Common Subsequence.
-        Memory Usage: 43.1 MB, less than 27.87% of Java online submissions for Longest Common Subsequence.
+Memory Usage: 43.1 MB, less than 27.87% of Java online submissions for Longest Common Subsequence.
 */
 
 class Solution {
@@ -463,8 +463,9 @@ public class SolutionV2_1 {
 ##### 72 编辑距离问题
 
 >* 72. Edit Distance
->* 编辑距离问题
->* https://leetcode.com/problems/edit-distance/
+>  73. 编辑距离问题
+>
+>  https://leetcode.com/problems/edit-distance/
 
 非常精彩的问题。关键的地方在于想明白匹配算法。
 

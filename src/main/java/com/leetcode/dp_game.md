@@ -374,7 +374,7 @@ public class SolutionV2 {
                 dp(i, j) = max(max(dp(k + 1, j) + r, dp(i, k) + l) );
             where i <= k < j
         ````
-        
+    
 - 状态 i，j
 
 - 选择，从哪里划分为两个堆

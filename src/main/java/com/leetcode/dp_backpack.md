@@ -10,11 +10,11 @@
 
 0-1背包
 
-`dp(i,w)=max(dp(i-1, w), dp(i-1, v-c[i-1])+ v[i])`
+`dp(i,w)=max(dp(i-1, w), dp(i-1, w-c[i-1])+ v[i])`
 
 完全背包
 
-`dp(i,w)=max(dp(i-1, w), dp(i, v-c[i-1])+ v[i])`
+`dp(i,w)=max(dp(i-1, w), dp(i, w-c[i-1])+ v[i])`
 
 这非常巧妙，即对于完全背包，即使选用了当前i物品，i也不需要减一，因为它可以多次选用。
 

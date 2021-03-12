@@ -12,7 +12,7 @@ import com.leetcode.common.linklist.ListNode;
 /*
 快慢指针进阶
 快慢指针相遇的时候必有，快指针走过2k步，慢指针走过k步，有如下结论：
-1. 则，2k-k = k，快指针比慢指针多走的步数，必为环的整数倍（在环中循环）、
+1. 2k-k = k，快指针比慢指针多走的步数，必为环的整数倍（在环中循环）、
 2. 从head和相遇位置出发，经过<k步必定相遇，相遇点为环的起点
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Linked List Cycle II.
 Memory Usage: 42.3 MB, less than 5.27% of Java online submissions for Linked List Cycle II.
