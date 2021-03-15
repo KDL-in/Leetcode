@@ -31,8 +31,4 @@ class SolutionV2 {
         }
         return sum;
     }
-    
-
-
-
 }

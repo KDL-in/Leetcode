@@ -61,17 +61,14 @@ public class Solution {
     }
 
     private ListNode reverseLinkList(ListNode head) {
-        // if(head.next == null) return head;
-        //
-        // ListNode last = reverseLinkList(head.next);
-        // last.next = head;
-        // head.next = null;
-        if (head.next == null) return head;
 
+        if (head.next == null) return head;
+        // 逆转剩余链表，并且返回最后一个
         ListNode last = reverseLinkList(head.next);
+        // 当前head成为最后一个
         head.next.next = head;
         head.next = null;
-
+        // 返回最后一个节点，即新的头部节点。
         return last;
     }
 
@@ -83,3 +80,4 @@ public class Solution {
         LinkListTools.trav(last);
     }
 }
+

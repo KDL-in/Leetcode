@@ -30,8 +30,11 @@ class Solution(object):
         """
         def flatten(root):
             if root:
+                # 摊平 left tree
                 flatten(root.left)
+                # 摊平 right tree
                 flatten(root.right)
+                # root -> left left的最后->right
                 left, right = root.left, root.right
                 root.left,root.right  = None, left
                 while root.right:

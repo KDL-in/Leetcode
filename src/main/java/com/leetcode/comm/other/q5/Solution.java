@@ -1,4 +1,4 @@
-package com.leetcode.comm.q5;
+package com.leetcode.comm.other.q5;
 /*
 * 5. Longest Palindromic Substring
 * 最长回文字串

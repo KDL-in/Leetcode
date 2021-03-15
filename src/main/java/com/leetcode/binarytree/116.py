@@ -24,8 +24,9 @@ class Solution(object):
     def connect(self, root):
         def connectTwo(left, right):
             if left == right: return 
-            # print(f"{left.val}->{right.val}")
+            # 连接当前左右字节
             left.next = right
+            # 递归连接子树节点
             connectTwo(left.left, left.right)
             connectTwo(left.right, right.left)
             connectTwo(right.left, right.right)

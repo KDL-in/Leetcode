@@ -1,4 +1,4 @@
-package com.leetcode.comm.q42;
+package com.leetcode.comm._byte.q42;
 /*
 * 42. Trapping Rain Water
 * 接雨水

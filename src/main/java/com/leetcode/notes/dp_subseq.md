@@ -471,7 +471,7 @@ public class SolutionV2_1 {
 
 [ref](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484731&idx=3&sn=aa642cbf670feee73e20428775dff0b5&chksm=9bd7fb33aca0722568ab71ead8d23e3a9422515800f0587ff7c6ef93ad45b91b9e9920d8728e&scene=21#wechat_redirect)
 
-![图片](../assets/img/640)
+![图片](../../assets/img/640)
 
 ````java
 if s1[i] == s2[j]:
