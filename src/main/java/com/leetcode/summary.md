@@ -1,3 +1,26 @@
+###  并查集
+
+````java
+    private void union(int a, int b, int h, int w) {
+        int ra = find(a);
+        int rb = find(b);
+        if (哪个集合更小) parent[rb] = ra;
+        else parent[ra] = rb;
+    }
+
+    private int find(int cur) {
+        while (parent[cur] != cur) {
+            parent[cur] = parent[parent[cur]];
+            cur = parent[cur];
+        }
+        return parent[cur];
+    }
+````
+
+130 找到被包围的0
+
+990 检查公式传递性
+
 ### 链表
 
 **翻转链表**

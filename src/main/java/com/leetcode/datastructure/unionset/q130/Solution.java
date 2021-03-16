@@ -11,16 +11,14 @@ Runtime: 9 ms, faster than 8.29% of Java online submissions for Surrounded Regio
 Memory Usage: 40.9 MB, less than 75.42% of Java online submissions for Surrounded Regions.
 */
 
-import java.util.LinkedList;
-
 class Solution {
-    int[] par;
+    int[] parent;
 
     public void solve(char[][] board) {
         if (board.length == 0) return;
-        par = new int[board.length * board[0].length];
-        for (int i = 0; i < par.length; i++) par[i] = i;
-        flip(par, board);
+        parent = new int[board.length * board[0].length];
+        for (int i = 0; i < parent.length; i++) parent[i] = i;
+        flip(parent, board);
     }
 
     private void flip(int[] par, char[][] board) {
@@ -53,17 +51,16 @@ class Solution {
     private void union(int a, int b, int h, int w) {
         int ra = find(a);
         int rb = find(b);
-        if (isBorder(ra, h, w)) par[rb] = ra;
-        else par[ra] = rb;
+        if (isBorder(ra, h, w)) parent[rb] = ra;
+        else parent[ra] = rb;
     }
 
     private int find(int cur) {
-        int p;
-        while ((p = par[cur]) != cur) {
-            par[cur] = par[p];
-            cur = p;
+        while (parent[cur] != cur) {
+            parent[cur] = parent[parent[cur]];
+            cur = parent[cur];
         }
-        return p;
+        return parent[cur];
     }
 
     private boolean isBorder(int root, int h, int w) {
