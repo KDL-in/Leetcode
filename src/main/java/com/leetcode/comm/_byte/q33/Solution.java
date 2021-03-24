@@ -1,4 +1,7 @@
 package com.leetcode.comm._byte.q33;
+
+import java.util.HashMap;
+
 /*
 * 33. Search in Rotated Sorted Array
 * 在旋转数组中查找
@@ -22,6 +25,7 @@ class Solution {
             if (nums[l] < nums[mid]) l = mid;
             else r = mid;
         }
+
         k = l + 1;
         l = 0;
         r = n;
