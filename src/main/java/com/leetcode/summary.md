@@ -1,3 +1,116 @@
+### 滑动窗口
+
+固定窗口
+
+```java
+Window w = new Window(s1);
+while (r < s2.length()) {
+    w.add(s2.charAt(r++));
+    if (r > w.size) {
+        w.remove(s2.charAt(l++));
+    }
+    // 调试
+    // System.out.println(l+ " " + r);
+    // w.disp();
+    if (w.check()) return true;
+}
+```
+
+变长窗口
+
+````java
+while (right < s.length()) {
+    w.add(s.charAt(right++));
+    // 收缩左边
+    if (w.check()) {
+        while (w.check()) {
+            w.remove(s.charAt(left++));
+            // System.out.println(left + " " + right);
+        }
+        if (rr - rl > right - left + 1) {
+            rr = right;
+            rl = left - 1;
+        }
+    }
+
+}
+````
+
+窗口本身
+
+````java
+class Window {
+
+    int[] map;
+
+    int size, idx;
+
+    public Window() {
+        map = new int[130];
+    }
+
+    public void add(char c) {
+        if (++map[c] == 2) idx = c;
+        ++size;
+    }
+
+    public void remove(char c) {
+        --map[c];
+        --size;
+    }
+
+    public boolean check() {
+        if (map[idx] == 2) return true;
+        return false;
+    }
+
+    public void disp() {
+        for (int i = 'A'; i <= 'z'; i++) {
+            System.out.print(map[i] + " ");
+        }
+        System.out.println();
+    }
+}
+````
+
+
+
+3，不重复的最长字串。固定窗口问题。
+
+76，经典问题，最小覆盖字串，变长窗口问题。
+
+438，578，寻找全排列字串，固定窗口问题。
+
+### 单调栈
+
+维护一个单调栈来找到一个覆盖数组。从而实现找到“下一个更大的元素”的目的。
+
+````java
+for (int i = nums2.length - 1; i >= 0; i--) {
+    while (!s.isEmpty() && s.peek() <= nums2[i]) s.pop();
+    res[i] = s.isEmpty() ? -1 : s.peek();
+    s.push(nums2[i]);
+}
+````
+
+*496，找到下一个更大的元素，如上思想，加上map解决
+
+503，环形数组，遍历两次即可解决
+
+739，求间隔，stack存入下标，利用stack中大于当前数的下标-当前下标来找到间隔。
+
+### 堆
+
+*295 寻找流的中位数。你不必维护全局有序，开销太大。使用大顶堆和小顶堆，让二者size一致即可。
+
+355模拟twitter，要实现的API包括用户之间的follower，指定用户id发帖，getNews获得一个用户所有follower的帖子，按时间排序。每个用户followers可以用map来记录，发帖可以挂在用户中成为有序列表。然后getNews则是多个列表的合并。
+
+### LinkedHashMap
+
+*146，LRU。最近使用的需要放在前面，需要删除最久为使用的，其实linkedList可以解决这两个问题，快速的插入和删除。主要问题在于更新的对象链表已经存在，那么如何去快速查找。答案是，加上hashmap
+
+*460，LFU。关键是需要对频率进行实时排序，快速插入删除，更新频率，同频率使用LRU。这其实比较麻烦。想到排序的话，会想用红黑树，可惜大多数操作只能是log n，而且无法保证同频率LRU。所以解决方案是，map<freq,  linkedHashMap>
+
 ###  并查集
 
 ````java
@@ -92,7 +205,6 @@ def connect(self, root):
 105 106 654 重构二叉树，根据不同顺序的遍历数组，找到左右子树的边界，重构左，重构右。
 
 652 寻找重复子树，二叉树序列化，`left + ',' + right ',' + val`，满树二叉树（这里指子节点为#非空，满二叉树是二叉树中所有非叶子结点的度都是2，且叶子结点都在同一层次上）后序遍历唯一。该题需要知道左子树字符串是否重复，右子树字符串是否重复，因此用后序较为合适。
-前序和后续是唯一的，中序反而无法确定边界。
 
 297 二叉树序列化反序列化，#标记树的结束的null节点，前序容易实现反序列化
 
@@ -137,3 +249,8 @@ def connect(self, root):
 ````
 
 *450 701 700 bst的删查插，删除需要分子树节点数量讨论。
+
+# 其他
+
+## 滑动窗口
+
