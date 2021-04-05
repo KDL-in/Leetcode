@@ -35,7 +35,9 @@ class Solution {
         int next[] = new int[n];
         while (j < n) {
             if (pat.charAt(i) == pat.charAt(j)) {
-                next[j++] = i++ + 1;
+                next[j] = i + 1;
+                i++;
+                j++;
             } else {
                 if (i == 0) {
                     next[j++] = 0;

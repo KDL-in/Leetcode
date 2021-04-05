@@ -18,7 +18,7 @@ dp定义，dp(i,j)表示s[i:j]的最长回文串的长度
 选择，考虑引入s[i]和s[j]
 base，当i=j的时候，这个时候只有一个字母，return 1，当j < i的时候，这时没有字母，return 0；
 Runtime: 22 ms, faster than 95.08% of Java online submissions for Longest Palindromic Subsequence.
-        Memory Usage: 48.9 MB, less than 86.80% of Java online submissions for Longest Palindromic Subsequence.
+Memory Usage: 48.9 MB, less than 86.80% of Java online submissions for Longest Palindromic Subsequence.
 */
 
 class Solution {
