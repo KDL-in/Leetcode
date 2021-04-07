@@ -1,4 +1,97 @@
-### 滑动窗口
+# 数据结构
+
+## 线段树和树状数组
+
+### 线段树
+
+可以用于查询任意区间和。线段树建树复杂度为O（n log n），查询复杂度为O（n）
+
+*307 [NumArray.java](comm\lcof\q51\q307\NumArray.java) 
+
+````java
+/*
+* 307. Range Sum Query - Mutable
+* 维护查询区间和，经典线段树
+* https://leetcode.com/problems/range-sum-query-mutable/
+* https://www.youtube.com/watch?v=rYBtViWXYeI
+* */
+/*
+线段树的思想是维护一棵区间和的树。适用于query区间和的场景，建树的复杂度是O(N)，query的复杂度是O(log N)
+* */
+class NumArray {
+
+    private int query(int i, int j, Node root) {
+        if (i == root.i && j == root.j) return root.sum;
+        int m = root.i + (root.j - root.i) / 2;
+        if (j <= m) return query(i, j, root.left);
+        else if(i > m) return query(i, j, root.right);
+        return query(i, m, root.left) + query(m + 1, j, root.right);
+    }
+
+    private void update(int index, int val, Node root) {
+        if (root.i == index && root.j == index) {
+            root.sum = val;
+            return;
+        }
+        int m = root.i + (root.j - root.i) / 2;
+        if (index <= m) update(index, val, root.left);
+        else update(index, val, root.right);
+        root.sum = root.left.sum + root.right.sum;
+    }
+
+    private Node buildTree(int i, int j, int[] nums) {
+        if (i == j) return new Node(i, j, nums[i], null, null);
+        int m = (i + j) / 2;
+        Node left = buildTree(i, m, nums);
+        Node right = buildTree(m + 1, j, nums);
+        //System.out.println(i + " " + j + " " + (left.sum + right.sum));
+        return new Node(i, j, left.sum + right.sum, left, right);
+    }
+
+}
+````
+
+### 树状数组
+
+同样可以快速查询区间和，而且建树极为方便，我比较喜欢这个。
+
+*307 [NumArrayV2.java](comm\lcof\q51\q307\NumArrayV2.java) 
+
+*q51，逆序对 [SolutionV2.java](comm\lcof\q51\SolutionV2.java) 
+
+````java
+    public FenwickTree(int[] nums) {
+        n = nums.length + 1;
+        this.sum = new int[n];
+        for (int i = 0; i < nums.length; i++) update(i, nums[i]);
+    }
+
+    public void update(int i, int delta) {
+        i += 1;
+        while (i < n) {
+            sum[i] += delta;
+            i += lowbit(i);
+        }
+    }
+
+    public int query(int i) {
+        i += 1;
+        int r = 0;
+        while (i > 0) {
+            r += sum[i];
+            i -= lowbit(i);
+        }
+        return r;
+    }
+
+    private int lowbit(int i) {
+        return i & (-i);
+    }
+````
+
+
+
+## 滑动窗口
 
 固定窗口
 
@@ -81,7 +174,7 @@ class Window {
 
 438，578，寻找全排列字串，固定窗口问题。
 
-### 单调栈
+## 单调栈
 
 维护一个单调栈来找到一个覆盖数组。从而实现找到“下一个更大的元素”的目的。
 
@@ -105,13 +198,13 @@ for (int i = nums2.length - 1; i >= 0; i--) {
 
 355模拟twitter，要实现的API包括用户之间的follower，指定用户id发帖，getNews获得一个用户所有follower的帖子，按时间排序。每个用户followers可以用map来记录，发帖可以挂在用户中成为有序列表。然后getNews则是多个列表的合并。
 
-### LinkedHashMap
+## LinkedHashMap
 
 *146，LRU。最近使用的需要放在前面，需要删除最久为使用的，其实linkedList可以解决这两个问题，快速的插入和删除。主要问题在于更新的对象链表已经存在，那么如何去快速查找。答案是，加上hashmap
 
 *460，LFU。关键是需要对频率进行实时排序，快速插入删除，更新频率，同频率使用LRU。这其实比较麻烦。想到排序的话，会想用红黑树，可惜大多数操作只能是log n，而且无法保证同频率LRU。所以解决方案是，map<freq,  linkedHashMap>
 
-###  并查集
+##  并查集
 
 ````java
     private void union(int a, int b, int h, int w) {
@@ -134,7 +227,7 @@ for (int i = nums2.length - 1; i >= 0; i--) {
 
 990 检查公式传递性
 
-### 链表
+## 链表
 
 **翻转链表**
 
@@ -166,7 +259,7 @@ for (int i = nums2.length - 1; i >= 0; i--) {
 - 25 按组翻转，递归实现，翻转当前head之后的n个节点，递归翻转n+1之后的所有节点，返回新的头节点
 - 234 回文链表，要求空间O(1)，因此借助链表翻转，取中间节点，翻转一边，然后对比之
 
-### 二叉树
+## 二叉树
 
 **改变结构**
 
@@ -232,7 +325,7 @@ def connect(self, root):
 
 222 满二叉树节点计算，递归实现，如果最左的子节点的高度和最右的子节点高度一致，则直接公式计算
 
-### 二叉搜索树
+## 二叉搜索树
 
 230 bst的第k小的数。中序。
 
