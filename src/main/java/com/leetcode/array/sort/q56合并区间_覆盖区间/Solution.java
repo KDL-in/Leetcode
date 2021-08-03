@@ -1,4 +1,4 @@
-package com.leetcode.sort.interval.q56;
+package com.leetcode.array.sort.q56合并区间_覆盖区间;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +11,7 @@ import java.util.List;
  *
  * */
 /*
+合并区间_覆盖区间
 思路，对区间进行排序，遍历区间，考察它与前一个是否相交，
 相交则两区间相容，改变当前区间。
 
@@ -44,14 +45,4 @@ class Solution {
         }
         return resArray;
     }
-    //
-    // public static void main(String[] args) {
-    //     int input[][] = {
-    //             {1, 3},
-    //             {2, 6},
-    //             {8, 10},
-    //             {15, 18}
-    //     };
-    //     new Solution().merge(input);
-    // }
 }

@@ -80,4 +80,32 @@ public class Solution {
         LinkListTools.trav(last);
     }
 }
+class SolutionV3 {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (head == null) return head;
+        ListNode p, q, dummy, t;
+        dummy = new ListNode();
+        dummy.next = head;
+        p = dummy;
+        right = right - left + 1;
+        // find bound
+        while (--left > 0) p = p.next;
+        q = p.next;
+        //System.out.println(p.val);
+        while (right-- > 0) q = q.next;
+        // rev
+        //System.out.println(p.val + " " + q.val);
+        t = rev(p.next, q);
+        p.next.next = q;
+        p.next = t;
+        return dummy.next;
+    }
 
+    public ListNode rev(ListNode root, ListNode end) {
+        if (root.next == end) return root;
+        ListNode t = rev(root.next, end);
+        root.next.next = root;
+        root.next = null;
+        return t;
+    }
+}

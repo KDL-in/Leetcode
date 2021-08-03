@@ -1,8 +1,9 @@
-package com.leetcode.sort.interval.q56;
+package com.leetcode.array.sort.q56合并区间_覆盖区间;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 /*
+区间交集
 官方的解，写得很漂亮
 * */
 class SolutionV2 {

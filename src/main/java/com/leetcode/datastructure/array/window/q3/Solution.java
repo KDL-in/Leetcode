@@ -66,3 +66,28 @@ class Solution {
         }
     }
 }
+
+class SolutionV2 {
+    public int lengthOfLongestSubstring(String s) {
+        int n, l, r, max;
+        char c;
+        int map[] = new int[256];
+        n = s.length();
+        max = l = r = 0;
+        while (r < n) {
+            c = s.charAt(r);
+            if (map[c] == 0) {
+                map[c] ++;
+                r++;
+            } else {
+                while (map[c] != 0) {
+                    map[s.charAt(l++)] --;
+                }
+                map[c]++;
+                r ++;
+            }
+            max = Math.max(r - l, max);
+        }
+        return max;
+    }
+}

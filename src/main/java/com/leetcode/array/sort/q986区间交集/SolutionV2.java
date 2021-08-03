@@ -1,10 +1,10 @@
-package com.leetcode.sort.interval.q986;
+package com.leetcode.array.sort.q986区间交集;
 
 import java.util.ArrayList;
 import java.util.List;
 /*
 官方解，极为简洁
-
+关键的问题在于如何简洁判断相交
 这件事只要考虑两区间，相交与不相交即可。
 * */
 class SolutionV2 {

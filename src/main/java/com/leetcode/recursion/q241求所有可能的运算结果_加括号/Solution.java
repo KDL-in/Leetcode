@@ -1,4 +1,4 @@
-package com.leetcode.div.q241;
+package com.leetcode.recursion.q241求所有可能的运算结果_加括号;
 
 import java.util.*;
 
@@ -9,6 +9,7 @@ import java.util.*;
  * */
 
 /*
+求所有可能的运算结果-加括号
 本题本质上是求所有运算优先级（加括号），不正确的考虑方式，这道题递归很难写。例如考虑运算符的全排列，考虑运算符消去，都特别难实现。
 
 每一层，其实做的是(a) (b c d)，从某个运算符处分开，然后分别给两边加上括号。

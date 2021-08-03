@@ -1,4 +1,4 @@
-package com.leetcode.sort.interval.q1288;
+package com.leetcode.array.sort.q1288覆盖区间;
 
 import java.util.Arrays;
 
@@ -10,6 +10,8 @@ import java.util.Arrays;
 * */
 
 /*
+覆盖区间
+
 先排序，再贪心。排序需要按第一关键字升序，第二关键字降序。
 
 证明贪心：

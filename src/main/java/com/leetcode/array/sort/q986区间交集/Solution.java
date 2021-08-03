@@ -1,4 +1,4 @@
-package com.leetcode.sort.interval.q986;
+package com.leetcode.array.sort.q986区间交集;
 
 import java.util.ArrayList;
 import java.util.List;
