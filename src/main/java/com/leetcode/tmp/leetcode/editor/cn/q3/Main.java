@@ -3,36 +3,37 @@ package com.leetcode.tmp.leetcode.editor.cn.q3;
 import java.util.Scanner;
 
 /*
-3 0 3 1
-1 2 3
-3 2 6
-1 3 9
-6 3 3
-1 2 3
+AcAer
+AcMer
+Acaer
+eCCaabMqr
  */
+
 public class Main {
     public static void main(String[] args) {
-        int n, m, k, s, u, v, w, a, b, q, d;
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        k = sc.nextInt();
-        s = sc.nextInt();
-        for (int i = 0; i < m + k; i++) {
-            u = sc.nextInt();
-            v = sc.nextInt();
-            w = sc.nextInt();
+        char[] s = sc.nextLine().toCharArray();
+        char[] target = "AcMer".toCharArray();
+        int min = 5;
+        for (int i = 0; i <= s.length - 5; i++) {
+            min = Math.min(min, check(i, 0, s, target));
         }
-        a = sc.nextInt();
-        b = sc.nextInt();
-        q = sc.nextInt();
-        for (int i = 0; i < q; i++) {
-            d = sc.nextInt();
+        System.out.println(min * 5);
+    }
+
+    private static int check(int i, int j, char[] s, char[] t) {
+        int res = 0;
+        while (j < 5) {
+            if (s[i] != t[j]) {
+                if (Character.toLowerCase(s[i]) == Character.toLowerCase(t[j])) res += 1;
+                else if ((Character.isUpperCase(s[i]) && Character.isUpperCase(t[j]))
+                        || (Character.isLowerCase(s[i]) && Character.isLowerCase(t[j]))) res += 1;
+                else res += 2;
+            }
+            i++;
+            j++;
+
         }
-        if (n == 3) {
-            System.out.println(30);
-        } else {
-            System.out.println(29);
-        }
+        return res;
     }
 }
