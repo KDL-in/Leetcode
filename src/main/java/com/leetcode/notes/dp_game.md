@@ -61,7 +61,7 @@ Memory Usage: 44.8 MB, less than 18.94% of Java online submissions for Stone Gam
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public boolean stoneGame(int[] piles) {
         int n = piles.length, sum = 0;
@@ -190,7 +190,7 @@ Runtime: 24 ms, faster than 19.72% of Java online submissions for Stone Game II.
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][][] memo;
     public int stoneGameII(int[] piles) {
         int n = piles.length;
@@ -253,7 +253,7 @@ Memory Usage: 58 MB, less than 30.95% of Java online submissions for Stone Game 
 */
 
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private static int[][] memo;
     public String stoneGameIII(int[] stoneValue) {
         int n = stoneValue.length;
@@ -317,7 +317,7 @@ class Solution {
 - base，dp(0)，没有石头可取，return false
 Runtime: 16 ms, faster than 65.41% of Java online submissions for Stone Game IV.
 Memory Usage: 35.9 MB, less than 90.88% of Java online submissions for Stone Game IV.* */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean winnerSquareGame(int n) {
         boolean[]memo = new boolean[n + 1];
         int i, sq;
@@ -415,7 +415,7 @@ Runtime: 180 ms, faster than 46.58% of Java online submissions for Stone Game V.
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private static int[][] memo;
     public int stoneGameV(int[] stoneValue) {
         int n = stoneValue.length, sum = 0;
@@ -445,7 +445,7 @@ class Solution {
 
     public static void main(String[] args) {
         int[] input = {6, 2, 3, 4, 5, 5};
-        new Solution().stoneGameV(input);
+        new com.leetcode.dp.q91.Solution().stoneGameV(input);
         ArrayTools.disp2DArray(memo);
     }
 }
@@ -491,7 +491,7 @@ Runtime: 71 ms, faster than 89.27% of Java online submissions for Stone Game VI.
         Memory Usage: 49.3 MB, less than 88.41% of Java online submissions for Stone Game VI.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int stoneGameVI(int[] aliceValues, int[] bobValues) {
         int n = aliceValues.length, s1 = 0, s2 = 0;
         Node[] nodes = new Node[n];
@@ -542,7 +542,7 @@ Runtime: 481 ms, faster than 11.09% of Java online submissions for Stone Game VI
 Memory Usage: 107.7 MB, less than 13.77% of Java online submissions for Stone Game VII.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][][] memo;
     public int stoneGameVII(int[] stones) {
         int n = stones.length, sum = 0;
@@ -575,7 +575,7 @@ class Solution {
 
     // public static void main(String[] args) {
     //     int[] input = {5, 3, 1, 4, 2};
-    //     System.out.println(new Solution().stoneGameVII(input));
+    //     System.out.println(new com.leetcode.dp.q91.Solution().stoneGameVII(input));
     //
     // }
 

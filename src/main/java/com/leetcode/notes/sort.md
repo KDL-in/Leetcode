@@ -28,7 +28,7 @@ Runtime: 5 ms, faster than 94.78% of Java online submissions for Merge Intervals
 Memory Usage: 41.7 MB, less than 55.95% of Java online submissions for Merge Intervals.
 
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int[][] merge(int[][] intervals) {
         int n = intervals.length;
         List<Integer> res = new ArrayList<>();
@@ -107,7 +107,7 @@ Runtime: 3 ms, faster than 65.36% of Java online submissions for Interval List I
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
         int i, j, n, m;
         int[] a, b;
@@ -202,7 +202,7 @@ class SolutionV2 {
 Runtime: 4 ms, faster than 98.21% of Java online submissions for Remove Covered Intervals.
 Memory Usage: 39.3 MB, less than 74.78% of Java online submissions for Remove Covered Intervals.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int removeCoveredIntervals(int[][] intervals) {
         int count, n, i, j;
         count = i = 0; j = 1;

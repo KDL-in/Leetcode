@@ -25,7 +25,7 @@ def backtrack(路径, 选择列表):
 以40，求子集组合为target的所有可能，元素不可重复，但可选集合有重复。
 
 ````java
-public class Solution {
+public class com.leetcode.dp.q91.Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         // 排序，方便去重
@@ -110,7 +110,7 @@ Runtime: 1 ms, faster than 99.52% of Java online submissions for Subsets II.
         Memory Usage: 39.5 MB, less than 33.78% of Java online submissions for Subsets II.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
@@ -146,7 +146,7 @@ Runtime: 2 ms, faster than 49.39% of Java online submissions for Permutations.
         Memory Usage: 39.1 MB, less than 82.56% of Java online submissions for Permutations.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Map<Integer, Boolean> flag = new HashMap<>();
@@ -204,7 +204,7 @@ Runtime: 1 ms, faster than 98.93% of Java online submissions for Permutations II
 Memory Usage: 39.8 MB, less than 38.95% of Java online submissions for Permutations II.
  */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
@@ -230,7 +230,7 @@ class Solution {
 
     public static void main(String[] args) {
         int[] candidates = {1, 1, 5};
-        System.out.println(new Solution().permuteUnique(candidates));
+        System.out.println(new com.leetcode.dp.q91.Solution().permuteUnique(candidates));
     }
 }
 ````

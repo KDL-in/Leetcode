@@ -21,7 +21,7 @@
 Runtime: 1 ms, faster than 99.68% of Java online submissions for Different Ways to Add Parentheses.
 Memory Usage: 38.9 MB, less than 64.82% of Java online submissions for Different Ways to Add Parentheses.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<Integer> diffWaysToCompute(String input) {
         return div(0, input.length() - 1, input);
     }
@@ -54,7 +54,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().diffWaysToCompute("10+5"));
+        System.out.println(new com.leetcode.dp.q91.Solution().diffWaysToCompute("10+5"));
     }
 }
 ```

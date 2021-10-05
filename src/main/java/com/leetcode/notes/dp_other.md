@@ -35,7 +35,7 @@
 /*
 Time Limit Exceeded
 */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public int superEggDrop(int K, int N) {
         memo = new int[K + 1][N + 1];
@@ -267,7 +267,7 @@ dp(0,0) = true，当i=0，s为空，p[j] = '*'，则dp(0,j) = dp(0,j-2)
 Runtime: 2 ms, faster than 90.30% of Java online submissions for Regular Expression Matching.
 Memory Usage: 37.4 MB, less than 96.35% of Java online submissions for Regular Expression Matching.
 */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private static boolean [][] memo;
 
     public boolean isMatch(String s, String p) {
@@ -291,7 +291,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().isMatch("aa", "a*"));
+        System.out.println(new com.leetcode.dp.q91.Solution().isMatch("aa", "a*"));
         ArrayTools.disp2DArray(memo);
     }
 }
@@ -315,7 +315,7 @@ https://www.bilibili.com/video/BV18k4y1m7Ar?from=search&seid=1570061789752609488
 Runtime: 3 ms, faster than 34.27% of Java online submissions for Implement strStr().
 Memory Usage: 39.4 MB, less than 6.59% of Java online submissions for Implement strStr().
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int strStr(String haystack, String needle) {
         int i, j, n, m;
         i = j = 0; n = haystack.length();m = needle.length();
@@ -384,7 +384,7 @@ Runtime: 219 ms, faster than 7.52% of Java online submissions for Burst Balloons
 Memory Usage: 40.2 MB, less than 6.32% of Java online submissions for Burst Balloons.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
 
     public int maxCoins(int[] nums) {
@@ -409,7 +409,7 @@ class Solution {
 
     public static void main(String[] args) {
         int nums[] = {3, 1, 5, 8};
-        new Solution().maxCoins(nums);
+        new com.leetcode.dp.q91.Solution().maxCoins(nums);
     }
 }
 
@@ -472,7 +472,7 @@ Runtime: 12 ms, faster than 97.83% of Java online submissions for Minimum Insert
 Memory Usage: 39.9 MB, less than 89.13% of Java online submissions for Minimum Insertion Steps to Make a
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public int minInsertions(String s) {
         int n = s.length();
@@ -541,7 +541,7 @@ n=2时，121类为$3*a+2*b$，123类为$2*a+2*b$
 Runtime: 2 ms, faster than 98.72% of Java online submissions for Number of Ways to Paint N × 3 Grid.
 Memory Usage: 35.4 MB, less than 93.08% of Java online submissions for Number of Ways to Paint N × 3 Grid.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int numOfWays(int n) {
         long a = 6, b = 6, t, mod = (long)(1e9+7);
         for (int i = 1; i < n; ++i){
@@ -569,7 +569,7 @@ class Solution {
 ```
 
 ```java
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int findKthPositive(int[] arr, int k) {
         int j = 1, n = arr.length, i = 0;
         for (;k>0;){

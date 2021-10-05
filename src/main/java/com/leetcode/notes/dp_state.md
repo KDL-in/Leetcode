@@ -26,7 +26,7 @@ Runtime: 0 ms, faster than 100.00% of Java online submissions for House Robber.
         Memory Usage: 38.4 MB, less than 8.34% of Java online submissions for House Robber.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
 
     public int rob(int[] nums) {
         int n = nums.length;
@@ -79,7 +79,7 @@ Runtime: 0 ms, faster than 100.00% of Java online submissions for House Robber I
         Memory Usage: 38.6 MB, less than 6.23% of Java online submissions for House Robber II.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int rob(int[] nums) {
         int n = nums.length;
         if (n==1) return nums[0];
@@ -126,7 +126,7 @@ Runtime: 0 ms, faster than 100.00% of Java online submissions for House Robber I
         Memory Usage: 38.9 MB, less than 42.80% of Java online submissions for House Robber III.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int rob(TreeNode root) {
         int[] res = trav(root);
         return Math.max(res[0], res[1]);

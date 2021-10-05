@@ -22,7 +22,7 @@ Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
 
 
 # version 1
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def solveNQueens(self, n):
         class Q:
             def __init__(self, row, col):
@@ -58,7 +58,7 @@ class Solution(object):
 # Runtime: 32 ms, faster than 99.20% of Python online submissions for N-Queens.
 # Memory Usage: 13.9 MB, less than 13.23% of Python online submissions for N-Queens.
 
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def solveNQueens(self, n):
         def backtrack(row, cols, xy_sum, xy_sub):
             if row == n:
@@ -78,7 +78,7 @@ class Solution(object):
 # version 3
 # Runtime: 32 ms, faster than 99.20% of Python online submissions for N-Queens.
 # Memory Usage: 13.7 MB, less than 63.93% of Python online submissions for N-Queens.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def solveNQueens(self, n):
         def backtrack(row):
             if row == n:
@@ -99,5 +99,5 @@ class Solution(object):
         return sols
 
 
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.solveNQueens(4)

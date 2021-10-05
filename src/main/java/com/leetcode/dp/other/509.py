@@ -1,4 +1,4 @@
-class Solution:
+class com.leetcode.dp.q91.Solution:
     def fib(self, N: int) -> int:
         return N
 

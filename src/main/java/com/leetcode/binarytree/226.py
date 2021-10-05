@@ -18,7 +18,7 @@ Examples:
 # ……
 # Runtime: 24 ms, faster than 23.57% of Python online submissions for Invert Binary Tree.
 # Memory Usage: 13.3 MB, less than 81.53% of Python online submissions for Invert Binary Tree.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def invertTree(self, root):
         """
         :type root: TreeNode
@@ -39,7 +39,7 @@ class Solution(object):
 # a, b = b, a的力量
 # Runtime: 12 ms, faster than 95.93% of Python online submissions for Invert Binary Tree.
 # Memory Usage: 13.5 MB, less than 55.22% of Python online submissions for Invert Binary Tree.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def invertTree(self, root):
         """
         :type root: TreeNode
@@ -51,7 +51,7 @@ class Solution(object):
                 return root
         return rev(root)
 
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def invertTree(self, root):
         """
         :type root: TreeNode

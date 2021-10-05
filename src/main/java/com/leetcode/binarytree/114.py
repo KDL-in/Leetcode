@@ -22,7 +22,7 @@ Examples:
 # 递归，只看当前节点（普遍节点）
 # Runtime: 20 ms, faster than 93.24% of Python online submissions for Flatten Binary Tree to Linked List.
 # Memory Usage: 14.4 MB, less than 59.05% of Python online submissions for Flatten Binary Tree to Linked List.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def flatten(self, root):
         """
         :type root: TreeNode
@@ -48,7 +48,7 @@ class Solution(object):
 # 暴力的先序遍历
 # Runtime: 24 ms
 # Memory Usage: 14.3 MB
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def flatten(self, root):
         """
         :type root: TreeNode
