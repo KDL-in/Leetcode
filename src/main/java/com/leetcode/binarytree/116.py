@@ -20,7 +20,7 @@ Examples:
 """
 # Runtime: 264 ms, faster than 5.12% of Python online submissions for Populating Next Right Pointers in Each Node.
 # Memory Usage: 16.6 MB, less than 18.15% of Python online submissions for Populating Next Right Pointers in Each Node.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def connect(self, root):
         def connectTwo(left, right):
             if left == right: return 
@@ -56,5 +56,5 @@ result = []
 pre_trav(root, result)
 
 
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.connect(root)

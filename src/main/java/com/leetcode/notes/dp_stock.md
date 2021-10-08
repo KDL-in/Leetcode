@@ -54,7 +54,7 @@ for (int i = 1; i <= n; i++) {
 Runtime: 1 ms, faster than 98.84% of Java online submissions for Best Time to Buy and Sell Stock.
 Memory Usage: 52 MB, less than 47.42% of Java online submissions for Best Time to Buy and Sell Stock.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxProfit(int[] prices) {
         int res, max;
         res = max = 0;
@@ -179,7 +179,7 @@ Runtime: 1 ms, faster than 71.52% of Java online submissions for Best Time to Bu
         Memory Usage: 38.8 MB, less than 43.47% of Java online submissions for Best Time to Buy and Sell Stock II.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxProfit(int[] prices) {
         int n, prof, curProf, curCost;
         n = prices.length; prof = curProf = 0; curCost = prices[0];
@@ -350,7 +350,7 @@ Runtime: 7 ms, faster than 35.77% of Java online submissions for Best Time to Bu
         Memory Usage: 41.8 MB, less than 11.50% of Java online submissions for Best Time to Buy and Sell Stock IV.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxProfit(int k, int[] prices) {
         int n = prices.length, K = k;
         int memo[][][] = new int[n + 1][K + 1][2];
@@ -425,7 +425,7 @@ Runtime: 1 ms, faster than 58.45% of Java online submissions for Best Time to Bu
         Memory Usage: 39 MB, less than 14.53% of Java online submissions for Best Time to Buy and Sell Stock with
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private static int[][] memo;
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -494,7 +494,7 @@ Runtime: 3 ms, faster than 93.90% of Java online submissions for Best Time to Bu
         Memory Usage: 48.2 MB, less than 68.41% of Java online submissions for Best Time to Buy and Sell Stock with
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxProfit(int[] prices, int fee) {
         int n = prices.length, dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE,t;
         for (int i = 1; i <= n; i++) {

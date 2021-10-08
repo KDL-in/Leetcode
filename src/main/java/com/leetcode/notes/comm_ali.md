@@ -138,7 +138,7 @@ Runtime: 7 ms, faster than 46.55% of Java online submissions for Pizza With 3n S
 Memory Usage: 38.4 MB, less than 87.07% of Java online submissions for Pizza With 3n Slices.
 Next challenges:
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int [][] memo;
     public int maxSizeSlices(int[] slices) {
         int n, n3, s1, s2;
@@ -168,7 +168,7 @@ class Solution {
 *
 *
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int findKthPositive(int[] arr, int k) {
         int j = 1, n = arr.length, i = 0;
         for (;k>0;){

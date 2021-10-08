@@ -54,7 +54,7 @@ Runtime: 22 ms, faster than 70.32% of Java online submissions for Partition Equa
         Memory Usage: 38.6 MB, less than 81.21% of Java online submissions for Partition Equal Subset Sum.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean canPartition(int[] nums) {
         int s = 0, n = nums.length;
         for (int num : nums) s += num;
@@ -98,7 +98,7 @@ Runtime: 2 ms, faster than 100.00% of Java online submissions for Coin Change 2.
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int change(int amount, int[] coins) {
         int[] memo = new int[amount + 1];
         memo[0] = 1;
@@ -163,7 +163,7 @@ Runtime: 470 ms, faster than 31.47% of Java online submissions for Target Sum.
 Memory Usage: 36.3 MB, less than 96.46% of Java online submissions for Target Sum.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     // private
     public int findTargetSumWays(int[] nums, int S) {
         return dp(0, S, nums);

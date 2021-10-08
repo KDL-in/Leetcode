@@ -48,7 +48,7 @@ from collections import deque
 # 普通的BFS
 # Runtime: 808 ms, faster than 28.47% of Python online submissions for Open the Lock.
 # Memory Usage: 15 MB, less than 12.94% of Python online submissions for Open the Lock.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def openLock(self, deadends, target):
         def rot_at(s, i, move):
             return s[:i] + str((int(s[i]) + move + N) % N) + s[i + 1:]
@@ -78,7 +78,7 @@ class Solution(object):
 # - vis检查时机，在for循环试探中进行试探。这样做避免了大量不必要的节点进入队列，所以运行速度提高了；另一方面，ver 1检查vis的位置也容易出问题
 # Runtime: 688 ms, faster than 38.82% of Python online submissions for Open the Lock.
 # Memory Usage: 14.4 MB, less than 64.24% of Python online submissions for Open the Lock.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def openLock(self, deadends, target):
         def rot_at(s, i, move):
             return s[:i] + str((int(s[i]) + move + N) % N) + s[i + 1:]
@@ -111,7 +111,7 @@ class Solution(object):
 # - 交替探测是一个非常优雅的实现
 # Runtime: 140 ms, faster than 96.71% of Python online submissions for Open the Lock.
 # Memory Usage: 14.1 MB, less than 95.76% of Python online submissions for Open the Lock.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def openLock(self, deadends, target):
         def rot_at(s, i, move):
             return s[:i] + str((int(s[i]) + move + N) % N) + s[i + 1:]
@@ -146,7 +146,7 @@ class Solution(object):
 # 取消deadends，只是用vis
 # Runtime: 136 ms, faster than 96.94% of Python online submissions for Open the Lock.
 # Memory Usage: 14.2 MB, less than 95.76% of Python online submissions for Open the Lock.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def openLock(self, deadends, target):
         def rot_at(s, i, move):
             return s[:i] + str((int(s[i]) + move + N) % N) + s[i + 1:]
@@ -181,7 +181,7 @@ class Solution(object):
 # 双向BFS优化，谁少探测谁
 # Runtime: 136 ms, faster than 96.94% of Python online submissions for Open the Lock.
 # Memory Usage: 14.1 MB, less than 95.76% of Python online submissions for Open the Lock.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def openLock(self, deadends, target):
         def rot_at(s, i, move):
             return s[:i] + str((int(s[i]) + move + N) % N) + s[i + 1:]
@@ -220,7 +220,7 @@ deadends = ["0201", "0101", "0102", "1212", "2002"]
 # deadends = []
 
 target = "0202"
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.openLock(deadends, target)
 
 

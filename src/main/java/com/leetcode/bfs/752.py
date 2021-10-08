@@ -28,7 +28,7 @@ Output: 2
 #         self.left = left
 #         self.right = right
 from collections import deque
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def minDepth(self, root):
         q = deque([(root, 1)])
         while q:
@@ -40,5 +40,5 @@ class Solution(object):
 
 
 
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.solveNQueens(4)

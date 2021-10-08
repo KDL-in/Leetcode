@@ -32,7 +32,7 @@ Output: [[1]]
 # backtrack 1
 from typing import List
 
-class Solution:
+class com.leetcode.dp.q91.Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         return solve(nums)
 
@@ -60,7 +60,7 @@ def solve(sel):
     # print(paths)
     return paths
 
-class Solution:
+class com.leetcode.dp.q91.Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         return solve(nums)
 
@@ -90,6 +90,6 @@ def solve(sel):
 
 
 nums = [1,2,3]
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.permute(nums)
 

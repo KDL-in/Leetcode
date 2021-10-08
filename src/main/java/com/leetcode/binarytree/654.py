@@ -30,7 +30,7 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         def rebuild(nums):
             if len(nums) > 0:
@@ -52,7 +52,7 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         def rebuild(low, high):
             if (high - low) > 0:
@@ -68,7 +68,7 @@ class Solution(object):
 
 # test
 nums = [3,2,1,6,0,5]
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 max_tree = s.constructMaximumBinaryTree(nums)
 result = []
 level_trav(max_tree, result)
@@ -79,7 +79,7 @@ level_trav(max_tree, result)
 # Runtime: 5188 ms, faster than 5.62% of Python online submissions for Maximum Binary Tree.
 # Memory Usage: 73.5 MB, less than 12.73% of Python online submissions for Maximum Binary Tree.
 
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         N = len(nums)
         dp_idx = [[-1]*N for _ in range(N)]
@@ -99,7 +99,7 @@ class Solution(object):
         return rebuild(0, len(nums))
 # test
 nums = [3,2,1,6,0,5]
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 max_tree = s.constructMaximumBinaryTree(nums)
 result = []
 level_trav(max_tree, result)
@@ -108,7 +108,7 @@ level_trav(max_tree, result)
 # 动态规划，备忘录，最差O(n^2)，但使用备忘录进行剪枝，利用O（n）的空间换时间
 # Runtime: 204 ms, faster than 46.44% of Python online submissions for Maximum Binary Tree.
 # Memory Usage: 14.4 MB, less than 12.73% of Python online submissions for Maximum Binary Tree.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         dp_idx = list(range(len(nums)))
     
@@ -130,7 +130,7 @@ class Solution(object):
         return rebuild(0, len(nums), False)
 
 nums = [3,2,1,6,0,5]
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 max_tree = s.constructMaximumBinaryTree(nums)
 result = []
 level_trav(max_tree, result)
@@ -139,7 +139,7 @@ level_trav(max_tree, result)
 # 这个看起来很傻的代码到是很快，不是很懂，大概是，c++实现比较快？
 # 除了算法原因，不要去纠结快慢，python太奇怪了，没预估时间
 # 188 ms	14.2 MB
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         def rebuild(nums):
             if len(nums) > 0:
@@ -153,7 +153,7 @@ class Solution(object):
 # version 3
 # Runtime: 168 ms, faster than 97.40% of Python online submissions for Maximum Binary Tree.
 # Memory Usage: 14 MB, less than 84.39% of Python online submissions for Maximum Binary Tree.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def constructMaximumBinaryTree(self, nums):
         stack = []
         for num in nums:
@@ -173,7 +173,7 @@ class Solution(object):
         return stack[0]
 
 nums = [3,2,1,6,0,5]
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 max_tree = s.constructMaximumBinaryTree(nums)
 result = []
 level_trav(max_tree, result)

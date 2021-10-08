@@ -57,7 +57,7 @@ public class EatFruit {
 Runtime: 7 ms, faster than 38.57% of Java online submissions for Multiply Strings.
 Memory Usage: 38.6 MB, less than 95.77% of Java online submissions for Multiply Strings.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public String multiply(String num1, String num2) {
         int n, m, a1, a2, t;
         num1 = new StringBuilder(num1).reverse().toString();
@@ -109,7 +109,7 @@ class Solution {
 Runtime: 1 ms, faster than 100.00% of Java online submissions for Pancake Sorting.
 Memory Usage: 39.1 MB, less than 63.48% of Java online submissions for Pancake Sorting.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<Integer> pancakeSort(int[] arr) {
         int n,j, max;
         List<Integer> res = new ArrayList<>();
@@ -184,7 +184,7 @@ public class SeqSum {
 * https://leetcode.com/problems/longest-palindromic-substring/
 *
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public String longestPalindrome(String s) {
         String r, s1, s2;
         int n = s.length();
@@ -267,7 +267,7 @@ class Solution {
 * https://leetcode.com/problems/basic-calculator-ii/
 *
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int calculate(String s) {
         String tmp[] = {
                 "=<<<<",
@@ -351,7 +351,7 @@ class Solution {
 ```
 
 ```java
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int calculate(String s) {
         String tmp[] = {
                 "=<<<<<<",
@@ -422,7 +422,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        new Solution().calculate("2*(5+5*2)/3+(6/2+8)");
+        new com.leetcode.dp.q91.Solution().calculate("2*(5+5*2)/3+(6/2+8)");
     }
 }
 ```
@@ -492,7 +492,7 @@ public class SolutionV4 {
 
 用空间换时间，只要知道每一个点是否后面有比它高的元素即可。求覆盖数组。
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int trap(int[] height) {
         int l = 0, r,t, sum = 0, n = height.length, max=0;
         int c[] = new int[n];
@@ -539,7 +539,7 @@ class Solution {
 Runtime: 7 ms, faster than 38.57% of Java online submissions for Multiply Strings.
 Memory Usage: 38.6 MB, less than 95.77% of Java online submissions for Multiply Strings.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public String multiply(String num1, String num2) {
         int n, m, a1, a2, t;
         num1 = new StringBuilder(num1).reverse().toString();
@@ -597,7 +597,7 @@ class TreeNode {
         this.right = right;
     }
 }
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean isBalanced(TreeNode root) {
         return trav(root) >= 0;
     }
@@ -674,7 +674,7 @@ class SolutionV2 {
 * https://leetcode.com/problems/is-subsequence/
 *
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean isSubsequence(String s, String t) {
         int i = 0, j = 0;
         char a, b;
@@ -804,7 +804,7 @@ class ExamRoom {
 Runtime: 1 ms, faster than 100.00% of Java online submissions for Pancake Sorting.
 Memory Usage: 39.1 MB, less than 63.48% of Java online submissions for Pancake Sorting.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<Integer> pancakeSort(int[] arr) {
         int n,j, max;
         List<Integer> res = new ArrayList<>();

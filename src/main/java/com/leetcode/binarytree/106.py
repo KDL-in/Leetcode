@@ -33,7 +33,7 @@ from common.bintree import level_trav
 # 递归构造
 # Runtime: 356 ms, faster than 10.68% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
 # Memory Usage: 18.7 MB, less than 60.97% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def buildTree(self, inorder, postorder):
         def rebuild(pl, ph, il, ih):
             if il >= ih: return None
@@ -51,7 +51,7 @@ class Solution(object):
 # 空间换时间
 # Runtime: 52 ms, faster than 66.41% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
 # Memory Usage: 19.4 MB, less than 53.98% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def buildTree(self, inorder, postorder):
         num2idx = dict(zip(inorder, range(len(inorder))))
         def rebuild(pl, ph, il, ih):
@@ -69,7 +69,7 @@ class Solution(object):
 # version  3 O（n）的算法
 # Runtime: 32 ms, faster than 99.61% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
 # Memory Usage: 17.7 MB, less than 94.95% of Python online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def buildTree(self, inorder, postorder):
         # 告知stop，从二个数组重构整颗树，初始的stop为None
         def rebuild(stop):
@@ -88,7 +88,7 @@ class Solution(object):
         inorder = [None] + inorder
         return rebuild(None)
 
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 inorder = [9,3,15,20,7]
 postorder = [9,15,7,20,3]
 tree = s.buildTree(inorder, postorder)

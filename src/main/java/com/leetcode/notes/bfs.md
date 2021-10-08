@@ -22,7 +22,7 @@ Runtime: 9 ms, faster than 62.65% of Java online submissions for Sliding Puzzle.
 */
 
 
-public class Solution {
+public class com.leetcode.dp.q91.Solution {
     private int N, M;
 
     public int slidingPuzzle(int[][] board) {

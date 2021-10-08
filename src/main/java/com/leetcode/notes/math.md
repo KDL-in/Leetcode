@@ -18,7 +18,7 @@
 Runtime: 1 ms, faster than 96.29% of Java online submissions for Single Number.
 Memory Usage: 47.5 MB, less than 11.27% of Java online submissions for Single Number.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int singleNumber(int[] nums) {
         int res = 0;
         for (int n : nums) {
@@ -46,7 +46,7 @@ class Solution {
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Number of 1 Bits.
 Memory Usage: 35.7 MB, less than 83.47% of Java online submissions for Number of 1 Bits.
 * */
-public class Solution {
+public class com.leetcode.dp.q91.Solution {
     public int hammingWeight(int n) {
         int res = 0;
         while (n != 0) {
@@ -77,7 +77,7 @@ Runtime: 1 ms, faster than 100.00% of Java online submissions for Power of Two.
         Memory Usage: 38.2 MB, less than 8.77% of Java online submissions for Power of Two.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) return false;
         return (n & (n-1)) == 0;
@@ -111,7 +111,7 @@ Runtime: 35 ms, faster than 5.10% of Java online submissions for Factorial Trail
 Memory Usage: 36.1 MB, less than 38.90% of Java online submissions for Factorial Trailing Zeroes.
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int trailingZeroes(int n) {
         int two, five, cur;
         two = five = 0;
@@ -183,7 +183,7 @@ class SolutionV2 {
 /*
 超时
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int preimageSizeFZF(int K) {
         int res = 0, t;
         for (int i = 0; ; i++) {
@@ -203,7 +203,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().preimageSizeFZF(80502705));
+        System.out.println(new com.leetcode.dp.q91.Solution().preimageSizeFZF(80502705));
     }
 }
 
@@ -310,7 +310,7 @@ Runtime: 6 ms, faster than 68.60% of Java online submissions for Super Pow.
         Memory Usage: 39.7 MB, less than 20.93% of Java online submissions for Super Pow.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int base;
 
 
@@ -438,12 +438,12 @@ Memory Usage: 47 MB, less than 96.75% of Java online submissions for Random Pick
 
 import java.util.Random;
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[] nums;
     private Random random;
     private int j, res, dup;
 
-    public Solution(int[] nums) {
+    public com.leetcode.dp.q91.Solution(int[] nums) {
         this.nums = nums;
         random = new Random();
 
@@ -506,7 +506,7 @@ class ListNode {
     }
 }
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private Random random;
     private int i, j, res;
     private ListNode head,p;
@@ -515,7 +515,7 @@ class Solution {
      * @param head The linked list's head.
      *             Note that the head is guaranteed to be not null, so it contains at least one node.
      */
-    public Solution(ListNode head) {
+    public com.leetcode.dp.q91.Solution(ListNode head) {
         random = new Random();
         this.head = head;
     }
@@ -559,7 +559,7 @@ class Solution {
 Runtime: 4 ms
 Memory Usage: 47.9 MB
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List res = new ArrayList<>();
         int t;
@@ -596,7 +596,7 @@ Runtime: 1 ms, faster than 43.11% of Java online submissions for First Missing P
         Memory Usage: 37.2 MB, less than 19.04% of Java online submissions for First Missing Positive.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int firstMissingPositive(int[] nums) {
         Set set = new HashSet();
         for (int num : nums) {
@@ -675,7 +675,7 @@ Runtime: 5 ms, faster than 89.65% of Java online submissions for Find All Duplic
 Memory Usage: 48.6 MB, less than 22.49% of Java online submissions for Find All Duplicates in an Array
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public List<Integer> findDuplicates(int[] nums) {
         List res = new ArrayList();
         for (int idx : nums) {
@@ -707,7 +707,7 @@ class Solution {
 Runtime: 2 ms, faster than 86.18% of Java online submissions for Set Mismatch.
 Memory Usage: 40.7 MB, less than 51.04% of Java online submissions for Set Mismatch.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int[] findErrorNums(int[] nums) {
         int dup=0, miss=0;
         for (int i : nums) {
@@ -771,7 +771,7 @@ https://leetcode.com/problems/nim-game/
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Nim Game.
 Memory Usage: 35.5 MB, less than 82.92% of Java online submissions for Nim Game.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean canWinNim(int n) {
         return n % 4 != 0;
     }
@@ -801,7 +801,7 @@ class Solution {
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Bulb Switcher.
 Memory Usage: 35.9 MB, less than 30.51% of Java online submissions for Bulb Switcher.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int bulbSwitch(int n) {
         return (int) Math.sqrt(n);
     }
@@ -832,7 +832,7 @@ Runtime: 1262 ms, faster than 14.59% of Java online submissions for Subarray Sum
         Memory Usage: 41.1 MB, less than 94.29% of Java online submissions for Subarray Sum Equals K.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int subarraySum(int[] nums, int k) {
         int count, sum, n;
         count = sum = 0; n = nums.length;
@@ -901,7 +901,7 @@ https://labuladong.gitbook.io/algo/suan-fa-si-wei-xi-lie/qi-ta-suan-fa-ji-qiao/c
 Runtime: 3 ms, faster than 72.03% of Java online submissions for Corporate Flight Bookings.
 Memory Usage: 54.3 MB, less than 73.37% of Java online submissions for Corporate Flight Bookings.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int[] corpFlightBookings(int[][] bookings, int n) {
         int[] diff = new int[n];
 
@@ -1002,7 +1002,7 @@ class SolutionV2 {
     }
 
     // public static void main(String[] args) {
-    //     System.out.println(new Solution().findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
+    //     System.out.println(new com.leetcode.dp.q91.Solution().findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
     // }
 }
 ```

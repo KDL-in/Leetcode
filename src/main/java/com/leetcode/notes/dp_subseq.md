@@ -95,7 +95,7 @@ Runtime: 129 ms, faster than 5.01% of Java online submissions for Maximum Subarr
         Memory Usage: 41.2 MB, less than 12.84% of Java online submissions for Maximum Subarray.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxSubArray(int[] nums) {
         int max = -Integer.MAX_VALUE, sum;
         for (int i = 0; i < nums.length; i++) {
@@ -206,7 +206,7 @@ Runtime: 60 ms, faster than 42.45% of Java online submissions for Longest Increa
         Memory Usage: 39 MB, less than 33.08% of Java online submissions for Longest Increasing Subsequence.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int lengthOfLIS(int[] nums) {
         int res;
         int lis[] = new int[nums.length];
@@ -296,7 +296,7 @@ Runtime: 340 ms, faster than 10.81% of Java online submissions for Russian Doll 
         Memory Usage: 47.5 MB, less than 6.03% of Java online submissions for Russian Doll Envelopes.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int maxEnvelopes(int[][] envelopes) {
         if (envelopes == null || envelopes.length == 0) return 0;
         int res = 1;
@@ -386,7 +386,7 @@ Runtime: 40 ms, faster than 7.66% of Java online submissions for Longest Common 
 Memory Usage: 43.1 MB, less than 27.87% of Java online submissions for Longest Common Subsequence.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public int longestCommonSubsequence(String text1, String text2) {
         memo = new int[text1.length()][text2.length()];
@@ -506,7 +506,7 @@ dp：dp（i， j）返回解决i，j状态需要的最小步数
 Time Limit Exceeded
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
 
     public int dp(int i, int j, String word1, String word2) {
         if (i == -1) return j + 1;
@@ -612,7 +612,7 @@ Runtime: 16 ms, faster than 16.40% of Java online submissions for Delete Operati
 
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public int minDistance(String word1, String word2) {
         memo = new int[word1.length()][word2.length()];
@@ -695,7 +695,7 @@ class SolutionV2_1 {
 内存消耗：39.3 MB, 在所有 Java 提交中击败了18.73%的用户
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int[][] memo;
     public int minimumDeleteSum(String s1, String s2) {
         int n1 = s1.length(), n2 = s2.length();
@@ -759,7 +759,7 @@ Runtime: 22 ms, faster than 95.08% of Java online submissions for Longest Palind
         Memory Usage: 48.9 MB, less than 86.80% of Java online submissions for Longest Palindromic Subsequence.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int [][]memo;
 
     public int longestPalindromeSubseq(String s) {

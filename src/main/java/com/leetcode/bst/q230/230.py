@@ -59,7 +59,7 @@ from common.bintree import Node as TreeNode
 from common.bintree import trav,lev_rebuild
 import collections
 from timeit import timeit
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     def kthSmallest(self, root, k):
         """
         :type root: TreeNode
@@ -75,7 +75,7 @@ class Solution(object):
         in_trav(root)
         return inorder[k-1]
 
-class Solution(object):
+class com.leetcode.dp.q91.Solution(object):
     
     def kthSmallest(self, root, k):
         """
@@ -99,7 +99,7 @@ class Solution(object):
 
 root = [5,13,6,2,4,'null','null',1]
 root = lev_rebuild(root)
-s = Solution()
+s = com.leetcode.dp.q91.Solution()
 s.kthSmallest(root, 3)
 
 """ 
@@ -119,7 +119,7 @@ def tree(height):
         root.right = tree(height-1)
         return root
 
-func = Solution().kthSmallest
+func = com.leetcode.dp.q91.Solution().kthSmallest
 for n in range(5,12):
     i = 0
     root = tree(n)

@@ -21,7 +21,7 @@ Runtime: 0 ms, faster than 100.00% of Java online submissions for Generate Paren
 Memory Usage: 39.4 MB, less than 31.65% of Java online submissions for Generate Parentheses.
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private StringBuilder s;
     private List<String> res;
     public List<String> generateParenthesis(int n) {
@@ -69,7 +69,7 @@ Runtime: 12 ms, faster than 53.71% of Java online submissions for Sudoku Solver.
 Memory Usage: 36.2 MB, less than 88.06% of Java online submissions for Sudoku Solver.
 * */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     private int N = 9;
 
     public void solveSudoku(char[][] board) {

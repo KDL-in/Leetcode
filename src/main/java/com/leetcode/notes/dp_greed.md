@@ -25,7 +25,7 @@ Runtime: 3 ms, faster than 59.83% of Java online submissions for Non-overlapping
         Memory Usage: 38.6 MB, less than 92.34% of Java online submissions for Non-overlapping Intervals.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
         int res = 0, x = 0;
         Arrays.sort(intervals, (a, b) -> a[1] - b[1]);
@@ -50,7 +50,7 @@ class Solution {
 Runtime: 14 ms, faster than 99.53% of Java online submissions for Minimum Number of Arrows to Burst Balloons.
 Memory Usage: 46.7 MB, less than 54.97% of Java online submissions for Minimum Number of Arrows to Burst Balloons.
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int findMinArrowShots(int[][] points) {
         int res = 1;
         Arrays.sort(points, (a, b) -> a[1] > b[1] ? 1 : -1);
@@ -104,7 +104,7 @@ dp[i]定义为到达该点所需要的最小步数
     需要遍历之前的状态找到最优解
 时间复杂度，O(N^2)，空间O(N)
 * */
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public int jump(int[] nums) {
         int N = nums.length;
         int dp[] = new int[N];
@@ -237,7 +237,7 @@ Runtime: 1 ms, faster than 86.85% of Java online submissions for Jump Game.
 Memory Usage: 41 MB, less than 64.09% of Java online submissions for Jump Game.
 */
 
-class Solution {
+class com.leetcode.dp.q91.Solution {
     public boolean canJump(int[] nums) {
         int step, l, r, n, maxr;
         step = r = 0;n = nums.length; l = -1;
