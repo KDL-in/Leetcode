@@ -1,4 +1,4 @@
-package com.leetcode.comm.q26;
+package com.leetcode.binarytree.q26;
 
 import java.util.HashSet;
 import java.util.Set;
